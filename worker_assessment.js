@@ -14,7 +14,6 @@ var q5_score_ID = '85fb-2e2d-b4c1';
 
 // scores are calculated based on the position of the questions
 // The top answer must remain the highest scoring and bottom lowest scoring
-
 var lookup_score = {
   [window.formyoula.form_fields[q1_ID].get('select_options').split('\n')[0]]: 3,
   [window.formyoula.form_fields[q2_ID].get('select_options').split('\n')[0]]: 3,
@@ -33,9 +32,9 @@ var lookup_score = {
   [window.formyoula.form_fields[q3_ID].get('select_options').split('\n')[2]]: 1,
   [window.formyoula.form_fields[q4_ID].get('select_options').split('\n')[2]]: 1,
   [window.formyoula.form_fields[q5_ID].get('select_options').split('\n')[2]]: 1,
-
 };
 
+// Update the hidden score fields whenever a selection is made
 window.formyoula.form_fields[q1_ID].on('all', function(){
   var score = lookup_score[window.formyoula.form_fields[q1_ID].get('value')];
   window.formyoula.form_fields[q1_score_ID].set({value:score});
